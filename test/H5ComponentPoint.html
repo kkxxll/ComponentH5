@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+	<title>Document</title>
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #000;
+		}
+		.iphone {
+			width: 340px;
+			height: 540px;
+			background-color: #fff;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin: -270px 0 0 -170px;
+		}
+/*		.h5_component_base {
+			transition: all 1s;
+		}
+		.h5_component_base_leave {
+			opacity: 0;
+		}
+		.h5_component_base_load {
+			opacity: 1;
+		}*/
+	</style>
+<link rel="stylesheet" type="text/css" href="../css/H5ComponentBase.css">
+<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../js/H5ComponentBase.js"></script>
+
+<!-- 引入散点图资源 -->
+<link rel="stylesheet" type="text/css" href="../css/H5ComponentPoint.css">
+<script type="text/javascript" src="../js/H5ComponentPoint.js"></script>
+</head>
+<body>
+	<div class="iphone">
+		
+	</div>
+	<script type="text/javascript">
+		var cfg = {
+			type: 'point',
+			width: 300,
+			height: 300,
+			data: [
+				['A项', .4, '#777', '15%', 0, 0],
+				['B项', .2, 'yellow', '-15%', '-60%', 1000], //后两项xy轴偏移
+				['C项', .1, 'red', 0, '120%', 1200]
+			],
+			css: {
+				bottom: 0,
+				opacity: 0 
+			},
+			animateIn: {
+				bottom: '40%',
+				opacity: 1 
+			},
+			animateOut: {
+				bottom: 0,
+				opacity: 0 
+			},
+			center: true
+		}
+		var h5 = new H5ComponentPoint('kk',cfg);
+		$('.iphone').append(h5);
+
+		var leave = true;
+		$('body').click(function() {
+			leave = !leave;
+			$('.h5_component').trigger(leave?'onLeave':'onLoad');
+		})
+	</script>
+</body>
+</html>
+
+
+

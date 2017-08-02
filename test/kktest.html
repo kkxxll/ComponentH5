@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<canvas id="canvas" width="600px" height="500px" style="border:1px solid #A6A7A6;"></canvas>  
+
+</body>
+<script type="text/javascript">
+	
+    /*  
+    *以(x,y)为中心，半径为r的正n边形  
+    *@param c 是canvas的上下文对象  
+    *@param angle 是第一个点(以最上面的顶点为准)偏离中心点(x,y)的弧度  
+    *   angle为0时第一个点和中心的x想等，如第一个正方形  
+    #@param counterclockwise 是angle偏离是顺时针还是逆时针  
+    */  
+  
+    function polygon(c,n,x,y,r,angle,counterclockwise){  
+        var angle = angle || 0;  
+        var counterclockwise = counterclockwise || false;  
+        c.moveTo(x + r*Math.sin(angle), y - r*Math.cos(angle));     //确立第一个点  
+        var delta = 2*Math.PI/n;        //相邻两个顶点之间的夹角  
+        for(var i=0;i<n;i++){            //其他顶点  
+            angle += counterclockwise ? -delta : delta;     //角度调整  
+            c.lineTo(x + r*Math.sin(angle), y - r*Math.cos(angle));  
+        }  
+        c.closePath();      //首位相邻  
+  
+    }  
+    var canvas = document.getElementById('canvas');  
+    var c = canvas.getContext("2d");  
+    c.beginPath();  
+    polygon(c,4,60,200,40);  
+    polygon(c,4,180,200,40,Math.PI/4);  
+    // polygon(c,6,300,200,40,Math.PI/6);  
+    // polygon(c,12,460,200,40);  
+    c.fillStyle = '#f00';  
+    c.fill();  
+</script>
+</html>
