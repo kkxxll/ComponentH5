@@ -1,29 +1,34 @@
-// 柱图
-var H5ComponentBar = function(name,cfg) {
-	var component = new H5ComponentBase(name,cfg);
-	$.each(cfg.data,function(idx,item) {
-		var line = $('<div class="line"></div>');
-		var name = $('<div class="name"></div>');
-		var rate = $('<div class="rate"></div>');
-		var per = $('<div class="per"></div>');
+/* 柱图组件对象 */
 
-		//宽度
-		var width = item[1]*100+'%';
-		rate.css('width',width);
+var H5ComponentBar =function ( name, cfg ) {
+  var component =  new H5ComponentBase( name ,cfg );
 
-		var bgStyle = '';
-		if(item[2]) {
-			bgStyle = 'style="background-color:'+item[2]+'"'
-		}
+  $.each(cfg.data,function(idx,item){
 
-		//用来生长的
-		rate.html('<div class="bg" '+bgStyle+'></div>');
+    var line = $('<div class="line">');
+    var name = $('<div class="name">');
+    var rate = $('<div class="rate">');
+    var per = $('<div class="per">');
 
-		name.text(item[0]);
-		per.text(width);
-		line.append(name).append(rate).append(per);
-		component.append(line);
-	});
+    var width = item[1]*100 + '%';
 
-	return component;
+    var  bgStyle = '';
+    if( item[2] ){
+      bgStyle = 'style="background-color:'+item[2]+'"';
+    }
+
+    rate.html( '<div class="bg" '+bgStyle+'></div>' );
+
+    rate.css('width',width);
+
+    name.text( item[0]);
+
+    per.text(width);
+
+    line.append( name ).append( rate ).append( per );
+
+    component.append(line);
+  });
+
+  return component;
 }
