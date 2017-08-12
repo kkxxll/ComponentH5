@@ -1,0 +1,337 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+li {
+    list-style: none;
+}
+.section {
+    font-size: 20px;
+    position: relative;
+}
+.component {
+    position: absolute;
+    
+    /*left: -30px;*/
+    /*transition: .5s all;*/
+    /*opacity: 0;*/
+}
+
+.kk-rock{
+    -webkit-animation:rock 2s infinite .5s;
+}
+@-webkit-keyframes rock{
+    0%{ transform:rotate(0deg)}
+    5%{ transform:rotate(3deg)}
+    10%{ transform:rotate(-4deg)}
+    15%{ transform:rotate(3deg)}
+    20%{ transform:rotate(-2deg)}
+    25%{ transform:rotate(1deg)}
+    30%{ transform:rotate(-1deg)}
+    70%{ transform:rotate(0deg)}
+    100%{ transform:rotate(0deg)}
+}
+
+
+/*bar*/
+.outer {
+    width: 300px;
+    height: 18px;
+    line-height: 18px;
+    list-style: none;
+    margin: 3px 0;
+    float: left;
+}
+.outer > div {
+    float: left;
+}
+.outer .name {
+    width: 30%;
+    text-align: center;
+}
+.outer .line {
+    width: 30%;
+    height: 100%;
+    
+}
+.outer .rate {
+    text-align: right;
+    float: right;
+    width: 30%;
+    transition: .5s all 1.5s;
+    opacity: 0;
+}
+.outer .line p {
+    width: 0;
+    height: 100%;
+    background: red;
+    transition: .5s all 1s;
+    border-radius: 0 5px 5px 0;
+}
+.bar_show .line p{
+    width: 100%;
+}
+.bar_hide .line p{
+    width: 0%;
+}
+.bar_show .rate {
+    opacity: 1;
+}
+.bar_hide .rate {
+    opacity: 0;
+}
+
+
+/*bar_v*/
+
+.outer_v {
+
+
+
+}
+.inner_v {
+    width: 68px;
+    position: relative;
+
+    height: 200px;
+    float: left;
+    text-align: center;
+}
+.rate_v {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    height: 15%;
+    transition: .5s all 1.5s;
+    opacity: 0;
+}
+.line_v {
+    width: 100%;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    margin-left: -10px;
+    height: 70%;
+    width: 16px;
+}
+
+.line_v p {
+    height: 0;
+    width: 100%;
+    background: red;
+    border-radius: 0 0 5px 5px;
+    transition: .5s all .5s;
+}
+.name_v {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 0%;
+    height: 15%;
+}
+.bar_v_show .line_v p{
+    height: 100%;
+}
+.bar_v_hide .line_v p{
+    height: 0%;
+}
+.bar_v_show .rate_v {
+    opacity: 1;
+}
+.bar_v_hide .rate_v {
+    opacity: 0;
+}
+/*point*/
+
+.point {
+    position: relative;
+    left: 10%;
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
+    font-size: 18px;
+    opacity: 0;
+}
+.point_show .point {
+    opacity: 1;
+}
+.point_hide .point {
+    opacity: 0;
+}
+.point .name {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 100px;
+    margin-left: -50px;
+    text-align: center;
+}
+.point .rate {
+    width: 100px;
+    margin-left: -50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+}
+
+.breathe:after{
+    content: ' ';
+    text-indent: -999px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    margin-left: -50%;
+    margin-top: -50%;
+    border-radius: 50%;
+    -webkit-opacity:.5;
+    background-color: inherit;
+    -webkit-animation: breathe 3s infinite ease-in-out 1.5s;
+    z-index: -1;
+}
+@-webkit-keyframes breathe{
+    0% {
+        -webkit-transform:scale(.5);
+        -webkit-opacity:.9;
+    }
+    95%{
+        -webkit-transform:scale(1.5);
+        -webkit-opacity:0;
+    }
+    100%{
+        -webkit-transform:scale(.9);
+        -webkit-opacity:0;
+    }
+}
+
+/*polyline*/
+.polyline canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 18px;
+    color: #000;
+    transition: 1s all;
+}
+
+.polyline .name {
+    position: absolute; 
+    opacity: 0;
+    transition: 1s all .8s;
+}
+.polyline_show .name {
+    opacity: 1;
+}
+.polyline_hide canvas {
+    opacity: 0;
+}
+.polyline_show canvas {
+    opacity: 1;
+}
+.polyline_hide canvas {
+    opacity: 0;
+}
+/*pie*/
+.pie canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.pie .name {
+    width: 100px;
+    height: 20px;
+    position: absolute;
+    opacity: 0;
+    transition: 1s all .8s;
+}
+
+.pie_show canvas {
+    opacity: 1;
+}
+.pie_hide canvas {
+    opacity: 0;
+}
+
+.pie_show .name {
+    opacity: 1;
+}
+.pie_hide .name {
+    opacity: 0;
+}
+
+
+/*ring*/
+.ring canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.ring .name,
+.ring .rate {
+    width: 100px;
+    height: 20px;
+    position: absolute;
+    opacity: 0;
+    transition: 1s all .8s;
+}
+
+.ring_show canvas {
+    opacity: 1;
+}
+.ring_hide canvas {
+    opacity: 0;
+}
+
+.ring_show .name,
+.ring_show .rate {
+    position: absolute;
+    opacity: 1;
+    z-index: 999;
+}
+.ring_hide .name,
+.ring_hide .rate {
+    opacity: 0;
+}
+
+.ring .mask {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 80%;
+    height: 80%;
+    background: #dfdfdf;
+    border-radius: 50%;
+}
+
+/*radar*/
+.radar .name {
+    position: absolute;
+    opacity: 0;
+}
+.radar canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.radar_show .name {
+    opacity: 1;
+}
+.radar_hide .name {
+    opacity: 0;
+}
+.radar_show canvas {
+    opacity: 1;
+
+}
+.radar_hide canvas {
+    opacity: 0;
+}

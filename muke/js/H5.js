@@ -15,7 +15,6 @@ var H5 =function ( ) {
     
      this.whenAddPage = function(){
         this.addComponent('slide_up',{
-            bg:'imgs/footer.png',
             css:{
                 opacity:0,
                 left:0,bottom:-20,
