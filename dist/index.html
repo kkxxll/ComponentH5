@@ -55,6 +55,74 @@
         },'作者:kkxxll')
     .addSection()
         .addComponent('base',{
+            width: 200,
+            height: 80,
+            top: 0,
+            opacity: 0,
+            center: true
+        },{
+            top: 20,
+            opacity: 1
+        },{
+            top: 0,
+            opacity: 0
+        },'雷达图')
+        .addComponent('radar',{
+            width: 280,
+            height: 280,
+            top: 180,
+            center: true,
+            opacity: 0
+        },{
+            top: 180,
+            opacity: 1
+        },{
+            top: 180,
+            opacity: 0
+        },[
+            ['jquery', '.8'],
+            ['js', '.2'],
+            ['html', '.5'],
+            ['css', '.6'],
+            ['h5', '.6'],
+            ['h5', '.9']
+        ])
+    .addSection()
+        .addComponent('base',{
+            opacity: 0,
+            height: 100,
+            width: 150,
+            center: true,
+            top: 0
+        },{
+            top: 30,
+            opacity: 1
+        },{
+            top: 0,
+            opacity: 0
+        },'折线图')
+        .addComponent('polyline',{
+            width: 320,
+            height: 300,
+            center: true,
+            bottom: 0,
+            opacity: 0
+        },{
+            opacity: 1,
+            bottom: 160
+        },{
+            opacity: 0,
+            bottom: 0
+        },[
+            ['jquery', '0.1','#000'],
+            ['js', '0.4'],
+            ['css', '0.3'],
+            ['html', '0.7'],
+            ['css', '0.3'],
+            ['html', '0.9']
+        ])
+    .addSection()
+        .addComponent('base',{
             width: 300,
             height: 200,
             opacity: 0,
@@ -148,40 +216,7 @@
             top: -10,
             opacity: 0
         },'散点图')
-    .addSection()
-        .addComponent('base',{
-            opacity: 0,
-            height: 100,
-            width: 150,
-            center: true,
-            top: 0
-        },{
-            top: 30,
-            opacity: 1
-        },{
-            top: 0,
-            opacity: 0
-        },'折线图')
-        .addComponent('polyline',{
-            width: 320,
-            height: 300,
-            center: true,
-            bottom: 0,
-            opacity: 0
-        },{
-            opacity: 1,
-            bottom: 160
-        },{
-            opacity: 0,
-            bottom: 0
-        },[
-            ['jquery', '0.1','#000'],
-            ['js', '0.4'],
-            ['css', '0.3'],
-            ['html', '0.7'],
-            ['css', '0.3'],
-            ['html', '0.9']
-        ])
+
     .addSection()
         .addComponent('base',{
             width: 200,
@@ -268,40 +303,6 @@
             opacity: 0
         },[
             ['jquery', '.7','#5371e9']
-        ])
-    .addSection()
-        .addComponent('base',{
-            width: 200,
-            height: 80,
-            top: 0,
-            opacity: 0,
-            center: true
-        },{
-            top: 20,
-            opacity: 1
-        },{
-            top: 0,
-            opacity: 0
-        },'雷达图')
-        .addComponent('radar',{
-            width: 280,
-            height: 280,
-            top: 180,
-            center: true,
-            opacity: 0
-        },{
-            top: 180,
-            opacity: 1
-        },{
-            top: 180,
-            opacity: 0
-        },[
-            ['jquery', '.8'],
-            ['js', '.2'],
-            ['html', '.5'],
-            ['css', '.6'],
-            ['h5', '.6'],
-            ['h5', '.9']
         ])
     .loading(
         ['imgs/1.jpg',

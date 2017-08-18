@@ -1,4 +1,4 @@
-/* 
+/*
 * @Author: kxiner
 * @Date:   2017-08-11 15:28:20
 * @Last Modified by:   kxiner
@@ -47,11 +47,11 @@ var H5 = function() {
             default:
         }
 
-        
 
 
 
-        
+
+
         this.sections[this.sections.length-1].append($component);
 
         return this;
@@ -67,7 +67,6 @@ var H5 = function() {
                 img.onload = function() {
                     that.loaded++;
                     $('body').text(Math.ceil(that.loaded/that.imgsCount*100)+'%');
-                    console.log(Math.ceil(that.loaded/that.imgsCount*100))
                     that.loading();
                 }
             }
@@ -89,7 +88,7 @@ var H5 = function() {
             onLeave: function(index, nextIndex, direction){
                 $('.section').eq(index-1).find('.component').trigger('leave')
             }
-            
+
         })
         // $.fn.fullpage.moveTo(8)
     }
