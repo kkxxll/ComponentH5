@@ -1,6 +1,6 @@
 var Radar = function(type, cfg, animateIn, animateOut, data) {
     var $component = new Base(type, cfg, animateIn, animateOut, data);
-    
+
     var w = cfg.width;
     var h = cfg.height;
 
@@ -23,10 +23,10 @@ var Radar = function(type, cfg, animateIn, animateOut, data) {
 
             var x = r+Math.sin(rad)*r*(s/10);
             var y = r+Math.cos(rad)*r*(s/10);
-            ctx.lineTo(x,y);    
+            ctx.lineTo(x,y);
         }
         ctx.closePath();
-        ctx.fillStyle = (flag = !flag) ? '#99c0ff' : '#f1f9ff';
+        ctx.fillStyle = (flag = !flag) ? '#d657e6' : '#eea7f2';
         ctx.fill();
     }
 
@@ -51,7 +51,7 @@ var Radar = function(type, cfg, animateIn, animateOut, data) {
         if(x<w/2){
             $name.css('left',x-25);
         }else{
-            
+
         }
 
         $component.append($name);
@@ -66,7 +66,7 @@ var Radar = function(type, cfg, animateIn, animateOut, data) {
     cns.width = ctx.width = w;
     cns.height = ctx.height = h;
     $component.append(cns);
-    
+
     var change = function( per ){
 
 

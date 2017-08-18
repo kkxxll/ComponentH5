@@ -3,14 +3,14 @@ var Polyline = function(type, cfg, animateIn, animateOut, data) {
     $component.marginLeft
     var w = cfg.width;
     var h = cfg.height;
-    
+
     //背景层
     var cns = document.createElement('canvas');
     var ctx = cns.getContext('2d');
 
     cns.width = ctx.width = w;
     cns.height = ctx.height = h;
-    
+
     $component.append(cns);
 
     var step = 10;
@@ -48,7 +48,7 @@ var Polyline = function(type, cfg, animateIn, animateOut, data) {
     cns = document.createElement('canvas');
     ctx = cns.getContext('2d');
     cns.width = ctx.width = w;
-    cns.height = ctx.height =h;
+    cns.height = ctx.height = h;
     $component.append(cns);
 
     function change(per) {
@@ -56,28 +56,28 @@ var Polyline = function(type, cfg, animateIn, animateOut, data) {
         ctx.beginPath();
         ctx.lineWidth = 1;
         ctx.strokeStyle = "#222";
-        
+
         //点 文本
         for(var i=0;i<data.length;i++) {
-            var item = data[i]; 
+            var item = data[i];
             x = w/(data.length+1)*i+w/(data.length+1);
             y = (1-item[1]*per)*h;
             ctx.moveTo(x,y);
             ctx.fillStyle = item[2] ? item[2] : '#595959';
             ctx.fillText(item[0],x+5,y-15);
-            ctx.arc(x,y,3,0,2*Math.PI);   
+            ctx.arc(x,y,3,0,2*Math.PI);
         }
 
 ctx.stroke();
         //线
         ctx.moveTo(w/(data.length+1),h);
         for(var i=0;i<data.length;i++) {
-            var item = data[i]; 
+            var item = data[i];
             x = w/(data.length+1)*i+w/(data.length+1);
             y = (1-item[1]*per)*h;
-            ctx.lineTo(x,y); 
+            ctx.lineTo(x,y);
         }
-        
+
         ctx.lineWidth = 1;
 
         ctx.lineTo(w-w/(data.length+1),h);
@@ -110,4 +110,3 @@ ctx.stroke();
     });
     return $component;
 }
-

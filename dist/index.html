@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+        <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
         <link rel="stylesheet" type="text/css" href="css/jquery.fullpage.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.11.3/jquery.js"></script>
@@ -20,7 +20,7 @@
 <body>
 </body>
 <script type="text/javascript">
-    
+
     var h5 = new H5();
     h5
     .addSection()
@@ -70,14 +70,13 @@
         .addComponent('bar',{
             width: 300,
             height: 400,
-            left: 0,
+            center: true,
             bottom: 30,
-            opacity: 0
+            opacity: 0,
+            top: 170
         },{
-            left: 50,
             opacity: 1
         },{
-            left: 0,
             opacity: 0
         },{
             'html': 80,
@@ -89,60 +88,64 @@
     .addSection()
         .addComponent('base',{
             width: 200,
-            height: 200,
+            height: 80,
             opacity: 0,
             center: true,
-            bottom: 0
+            bottom: -20
         },{
             opacity: 1,
-            bottom: 50
+            bottom: 10
         },{
             opacity: 0,
-            bottom: 0
+            bottom: -10
         },'垂直柱状图')
         .addComponent('bar_v',{
+            width: 300,
+            height: 100,
             opacity: 0,
-            top: 0
+            top: -10,
+            center: true
         },{
             opacity: 1,
-            top: 150
+            top: 20
         },{
             opacity: 0,
-            top: 0
+            top: -10
         },{
             'html': 80,
             'css' : 30,
             'js': 88,
             'jquery': 90,
-            'bootstrap': 50
+            'vue': 50
         })
     .addSection()
         .addComponent('point',{
             width: 350,
             height: 500,
             opacity: 0,
-            center: true
+            center: true,
+            top: 50
         },{
             opacity: 1
         },{
             opacity: 0
         },[
             ['js','50','#f6f875','39%','30%',true],
-            ['css','40','#bd95f0','10%','-14%'],
-            ['html','60','#75f2f8','4%','16%']
+            ['css','35','#bd95f0','10%','-14%'],
+            ['html','49','#75f2f8','15%','16%']
         ])
         .addComponent('base',{
             width: 200,
             height: 200,
-            top: 0,
+            top: -10,
             center: true,
             opacity: 0
         },{
-            top: 10,
+            top: 30,
             opacity: 1
         },
         {
-            top: 0,
+            top: -10,
             opacity: 0
         },'散点图')
     .addSection()
@@ -153,14 +156,14 @@
             center: true,
             top: 0
         },{
-            top: 90,
+            top: 30,
             opacity: 1
         },{
             top: 0,
             opacity: 0
         },'折线图')
         .addComponent('polyline',{
-            width: 400,
+            width: 320,
             height: 300,
             center: true,
             bottom: 0,
@@ -168,7 +171,7 @@
         },{
             opacity: 1,
             bottom: 160
-        },{ 
+        },{
             opacity: 0,
             bottom: 0
         },[
@@ -196,20 +199,20 @@
             opacity: 0
         },'饼状图')
         .addComponent('pie',{
-            width: 270,
-            height: 270,
+            width: 180,
+            height: 180,
             center: true,
-            top: 60,
+            top: 160,
             opacity: 0
         },{
             opacity: 1
         },{
             opacity: 0
         },[
-            ['jquery', '0.2','#789'],
-            ['js', '0.3','#908'],
-            ['css', '0.4','#423'],
-            ['js', '0.1','#908']
+            ['js', '0.2','#74b5f6'],
+            ['jquery', '0.3','#e73ed4'],
+            ['css', '0.4','#95fae5'],
+            ['js', '0.1','#c570f4']
         ])
     .addSection()
         .addComponent('base',{
@@ -228,9 +231,9 @@
             opacity: 0
         },'环形图')
         .addComponent('ring',{
-            width: 150,
-            height: 150,
-            center: true,
+            width: 100,
+            height: 100,
+            left: 20,
             top: 180,
             opacity: 0
         },{
@@ -238,25 +241,25 @@
         },{
             opacity: 0
         },[
-            ['jquery', '.8','#789']
+            ['html', '.8','#f57945']
         ])
         .addComponent('ring',{
-            width: 100,
-            height: 100,
-            left: 120,
-            bottom: 80,
+            width: 120,
+            height: 120,
+            left: 40,
+            bottom: 50,
             opacity: 0
         },{
             opacity: 1
         },{
             opacity: 0
         },[
-            ['jquery', '.7','#823']
+            ['css', '.7','#da455e']
         ])
         .addComponent('ring',{
-            width: 150,
-            height: 150,
-            left: 200,
+            width: 140,
+            height: 140,
+            right: 50,
             bottom: 190,
             opacity: 0
         },{
@@ -264,25 +267,25 @@
         },{
             opacity: 0
         },[
-            ['jquery', '.7','#459']
+            ['jquery', '.7','#5371e9']
         ])
     .addSection()
         .addComponent('base',{
             width: 200,
             height: 80,
-            bottom: 0,
+            top: 0,
             opacity: 0,
             center: true
         },{
-            bottom: 80,
+            top: 20,
             opacity: 1
         },{
-            bottom: 0,
+            top: 0,
             opacity: 0
         },'雷达图')
         .addComponent('radar',{
-            width: 300,
-            height: 300,
+            width: 280,
+            height: 280,
             top: 180,
             center: true,
             opacity: 0
@@ -302,13 +305,7 @@
         ])
     .loading(
         ['imgs/1.jpg',
-        'imgs/2.jpg',
-        'imgs/3.jpg',
-        'imgs/4.jpg',
-        'imgs/5.jpg',
-        'imgs/6.jpg',
-        'imgs/7.jpg',
-        'imgs/8.jpg']
+        'imgs/2.jpg']
     );
 
 

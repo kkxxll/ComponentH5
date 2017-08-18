@@ -7,14 +7,23 @@ var Bar_v = function(type, cfg, animateIn, animateOut, data) {
     var $rate_v;
     var $line_v;
     $outer_v = $('<div class="outer_v"></div>');
-
+    $outer_v.css({
+      width: '100%',
+      height: '100%'
+    })
+    var obj = Object.keys(data);
+    var len = obj.length;
+    var inner_v_w = Math.floor(100/len);
     for(var key in data) {
-        
+        len++;
         $inner_v = $('<div class="inner_v"></div>');
-
+        $inner_v.css({
+          'width': inner_v_w+'%'
+        })
         $name_v = $('<div class="name_v"></div>');
         $name_v.text(key);
         $line_v = $('<div class="line_v"><p></p></div>');
+
 
         $line_v.height(200*0.7*data[key]*0.01);
 
@@ -30,4 +39,3 @@ var Bar_v = function(type, cfg, animateIn, animateOut, data) {
     $component.append($outer_v);
     return $component;
 }
-

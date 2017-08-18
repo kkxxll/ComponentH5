@@ -11,7 +11,7 @@ li {
 }
 .component {
     position: absolute;
-    
+
     /*left: -30px;*/
     /*transition: .5s all;*/
     /*opacity: 0;*/
@@ -35,7 +35,7 @@ li {
 
 /*bar*/
 .outer {
-    width: 300px;
+    width: 100%;
     height: 18px;
     line-height: 18px;
     list-style: none;
@@ -47,12 +47,13 @@ li {
 }
 .outer .name {
     width: 30%;
-    text-align: center;
+    text-align: right;
+    padding-right: 3px;
 }
 .outer .line {
     width: 30%;
     height: 100%;
-    
+
 }
 .outer .rate {
     text-align: right;
@@ -85,9 +86,6 @@ li {
 /*bar_v*/
 
 .outer_v {
-
-
-
 }
 .inner_v {
     width: 68px;
@@ -218,7 +216,7 @@ li {
 }
 
 .polyline .name {
-    position: absolute; 
+    position: absolute;
     opacity: 0;
     transition: 1s all .8s;
 }
@@ -247,7 +245,7 @@ li {
     height: 20px;
     position: absolute;
     opacity: 0;
-    transition: 1s all .8s;
+    transition: 1s all 1s;
 }
 
 .pie_show canvas {
